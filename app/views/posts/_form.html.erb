@@ -1,0 +1,24 @@
+
+<%= form_for @post, url: {action: form_action}, html: {class: "form-control"} do |f| %>
+
+<div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <%= label_tag(:title, "Enter Post Title") %>
+  </div>
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <%= f.text_field :title %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <%= label_tag(:link, "Enter link of Post") %>
+  </div>
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <%= f.text_field :link %>
+  </div>
+</div>
+<div class="row pull-right">
+  <%= f.submit form_action.capitalize %>
+</div>
+
+<% end %>

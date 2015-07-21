@@ -1,0 +1,27 @@
+
+
+<div class="row">
+  <h2>Post List</h2>
+
+  <%= link_to " Create New Post", new_post_path, class: 'btn btn-primary btn-xs glyphicon glyphicon-plus pull-right' %>
+</div>
+
+
+<% @posts.each do |post| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= link_to post.title, post %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <%= post.link %>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right">
+      <%= link_to "", edit_post_path(post), class: 'btn btn-primary btn-xs glyphicon glyphicon-pencil' %>
+      <%= link_to "", post, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash' %>
+    </div>
+  </div>
+</div>
+
+<% end %>

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       # correct email / password
       session[:user_id] = user.id
       flash[:success] = 'You are now logged in.'
-      redirect_to secret_path
+      redirect_to posts_path
     else
       # wrong email or password
       flash[:danger] = 'Invalid email or password.'
